@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AKSHUU — A Royal Digital World</title>
+    <!-- Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Golden Particle Canvas -->
+    <canvas id="gold-canvas"></canvas>
+
+    <!-- Royal Ornamental Corner Frames -->
+    <div class="royal-frame">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+    </div>
+
+    <!-- Chapter Navigation Dots -->
+    <nav class="chapter-nav" aria-label="Chapter Navigation">
+        <button class="nav-dot active" data-target="page-1" aria-label="Intro"></button>
+        <button class="nav-dot" data-target="page-2" aria-label="Personality"></button>
+        <button class="nav-dot" data-target="page-3" aria-label="Message"></button>
+        <button class="nav-dot" data-target="page-4" aria-label="Royal Vibe"></button>
+        <button class="nav-dot" data-target="page-5" aria-label="Final Surprise"></button>
+    </nav>
+
+    <!-- Premium Loading Screen -->
+    <div id="preloader" class="preloader">
+        <div class="loader-emblem">
+            <span class="crown-icon">♛</span>
+            <div class="gold-line-loader"></div>
+            <p class="loader-text">CRAFTING A ROYAL WORLD...</p>
+        </div>
+    </div>
+
+    <!-- MAIN CINEMATIC EXPERIENCE -->
+    <main id="royal-experience">
+
+        <!-- PAGE 1: ROYAL INTRO -->
+        <section id="page-1" class="page active">
+            <div class="content-wrapper center-content">
+                <p class="intro-whisper reveal-item" data-delay="400">
+                    Har kahani mein koi ek special hota hai...
+                </p>
+
+                <div class="royal-title-container reveal-item" data-delay="1400">
+                    <div class="ornament-divider"><span>✦</span></div>
+                    <h1 class="hero-name" data-text="AKSHUU">AKSHUU</h1>
+                    <div class="ornament-divider"><span>✦</span></div>
+                </div>
+
+                <p class="hero-subtitle reveal-item" data-delay="2400">
+                    Not just a name, it's a beautiful feeling. <span class="gold-heart">♡</span>
+                </p>
+
+                <div class="action-wrapper reveal-item" data-delay="3300">
+                    <button id="enter-btn" class="royal-btn">
+                        <span class="btn-glow"></span>
+                        <span class="btn-text">ENTER HER WORLD ✨</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: HER PERSONALITY -->
+        <section id="page-2" class="page">
+            <div class="content-wrapper">
+                <span class="chapter-tag reveal-item" data-delay="200">CHAPTER I — ESSENCE</span>
+                <h2 class="section-heading reveal-item" data-delay="400">
+                    Something Different, Something Special...
+                </h2>
+                <div class="gold-separator reveal-item" data-delay="600"></div>
+
+                <ul class="personality-list">
+                    <li class="trait-item reveal-item" data-delay="900">
+                        <span class="trait-diamond">◆</span>
+                        <span class="trait-text">Apni duniya ki khud queen.</span>
+                    </li>
+                    <li class="trait-item reveal-item" data-delay="1400">
+                        <span class="trait-diamond">◆</span>
+                        <span class="trait-text">Thodi cute, thodi crazy.</span>
+                    </li>
+                    <li class="trait-item reveal-item" data-delay="1900">
+                        <span class="trait-diamond">◆</span>
+                        <span class="trait-text">Attitude bhi classy, nature bhi pyara.</span>
+                    </li>
+                    <li class="trait-item reveal-item" data-delay="2400">
+                        <span class="trait-diamond">◆</span>
+                        <span class="trait-text">Not perfect, but absolutely unique.</span>
+                    </li>
+                    <li class="trait-item reveal-item" data-delay="2900">
+                        <span class="trait-diamond">◆</span>
+                        <span class="trait-text">Jiski presence hi enough hai.</span>
+                    </li>
+                </ul>
+
+                <div class="nav-action reveal-item" data-delay="3500">
+                    <button class="royal-btn next-page-btn" data-next="page-3">
+                        <span class="btn-text">READ HER LETTER ➔</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: A SPECIAL MESSAGE -->
+        <section id="page-3" class="page">
+            <div class="content-wrapper">
+                <span class="chapter-tag reveal-item" data-delay="200">CHAPTER II — WORDS FOR YOU</span>
+                <h2 class="section-heading reveal-item" data-delay="400">
+                    Dear AKSHUU...
+                </h2>
+
+                <div class="letter-box reveal-item" data-delay="600">
+                    <div class="letter-border-inner">
+                        <div id="typewriter-container" class="typewriter-lines">
+                            <!-- Lines injected sequentially via JS typewriter -->
+                        </div>
+                        <span id="typing-cursor" class="cursor">|</span>
+                    </div>
+                </div>
+
+                <div class="nav-action" id="page-3-next" style="opacity: 0; pointer-events: none; transition: opacity 1s ease;">
+                    <button class="royal-btn next-page-btn" data-next="page-4">
+                        <span class="btn-text">DISCOVER HER VIBE ➔</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: HER ROYAL VIBE -->
+        <section id="page-4" class="page">
+            <div class="content-wrapper wide-wrapper">
+                <span class="chapter-tag reveal-item" data-delay="200">CHAPTER III — AURA</span>
+                <h2 class="section-heading reveal-item" data-delay="400">
+                    Her Royal Vibe
+                </h2>
+                <div class="gold-separator reveal-item" data-delay="500"></div>
+
+                <div class="cards-grid">
+                    <!-- Card 01 -->
+                    <article class="royal-card reveal-item" data-delay="700">
+                        <div class="card-shimmer"></div>
+                        <span class="card-number">01 — QUEEN ENERGY</span>
+                        <h3 class="card-quote">"Apni duniya ki khud queen."</h3>
+                        <div class="card-ornament">✦</div>
+                    </article>
+
+                    <!-- Card 02 -->
+                    <article class="royal-card reveal-item" data-delay="1000">
+                        <div class="card-shimmer"></div>
+                        <span class="card-number">02 — UNIQUE SOUL</span>
+                        <h3 class="card-quote">"Na kisi jaisi, na kisi se kam."</h3>
+                        <div class="card-ornament">✦</div>
+                    </article>
+
+                    <!-- Card 03 -->
+                    <article class="royal-card reveal-item" data-delay="1300">
+                        <div class="card-shimmer"></div>
+                        <span class="card-number">03 — CLASSY VIBES</span>
+                        <h3 class="card-quote">"Simple rehkar bhi special hona ek art hai."</h3>
+                        <div class="card-ornament">✦</div>
+                    </article>
+
+                    <!-- Card 04 -->
+                    <article class="royal-card reveal-item" data-delay="1600">
+                        <div class="card-shimmer"></div>
+                        <span class="card-number">04 — GOLDEN HEART</span>
+                        <h3 class="card-quote">"Beautiful personality is the real beauty."</h3>
+                        <div class="card-ornament">✦</div>
+                    </article>
+                </div>
+
+                <div class="nav-action reveal-item" data-delay="2100">
+                    <button class="royal-btn next-page-btn" data-next="page-5">
+                        <span class="btn-text">THE FINAL SURPRISE ✨</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: THE FINAL SURPRISE -->
+        <section id="page-5" class="page">
+            <div class="content-wrapper center-content finale-wrapper">
+                <div class="crown-badge reveal-item" data-delay="500">
+                    <h2 class="finale-name">AKSHUU <span class="crown-emoji">👑</span></h2>
+                </div>
+
+                <p class="finale-lead reveal-item" data-delay="1400">
+                    Ek baat hamesha yaad rakhna...
+                </p>
+
+                <div class="finale-poem reveal-item" data-delay="2300">
+                    <p>Khush rehna, muskurate rehna,</p>
+                    <p>apne dreams complete karna,</p>
+                    <p>aur kabhi apni value mat bhoolna.</p>
+                </div>
+
+                <p class="finale-sub reveal-item" data-delay="3400">
+                    Because you deserve all the happiness in this world.
+                </p>
+
+                <div class="final-mantra-box reveal-item" data-delay="4400">
+                    <p class="final-mantra">
+                        YOU ARE RARE, YOU ARE SPECIAL, YOU ARE AKSHUU. <span class="gold-heart">♡</span>
+                    </p>
+                </div>
+
+                <div class="nav-action reveal-item" data-delay="5400">
+                    <button id="replay-btn" class="royal-btn">
+                        <span class="btn-text">EXPERIENCE AGAIN ↺</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
