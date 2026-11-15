@@ -76,6 +76,38 @@ html, body {
 .bottom-right { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
 
 /* =========================================================
+   MUSIC CONTROL BUTTON
+   ========================================================= */
+
+.music-control-wrapper {
+    position: fixed;
+    bottom: 22px;
+    left: 22px;
+    z-index: 9999;
+}
+
+.music-btn {
+    background: rgba(14, 13, 11, 0.88);
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-light);
+    padding: 8px 14px;
+    font-size: 0.7rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    background: var(--gold-primary);
+    color: #000000;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* =========================================================
    CHAPTER NAVIGATION DOTS
    ========================================================= */
 
@@ -637,6 +669,16 @@ html, body {
 @media (max-width: 768px) {
     .royal-frame {
         inset: 8px;
+    }
+
+    .music-control-wrapper {
+        bottom: 14px;
+        left: 14px;
+    }
+
+    .music-btn {
+        padding: 6px 10px;
+        font-size: 0.65rem;
     }
 
     .chapter-nav {
