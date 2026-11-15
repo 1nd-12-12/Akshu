@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const replayBtn = document.getElementById('replay-btn');
     const nextBtns = document.querySelectorAll('.next-page-btn');
     const bgMusic = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-toggle-btn');
 
     let currentPageId = 'page-1';
     let isFinaleMode = false;
@@ -228,16 +229,36 @@ document.addEventListener('DOMContentLoaded', () => {
     /* =====================================================
        4. EVENT LISTENERS & INITIALIZATION
        ===================================================== */
-    enterBtn.addEventListener('click', () => {
-        // Play background music (akshu.mp3) smoothly on click
+    function attemptPlayMusic() {
         if (bgMusic) {
-            bgMusic.volume = 0.8;
-            bgMusic.play().catch(err => {
-                console.log("Audio autoplay prevented by browser:", err);
+            bgMusic.volume = 0.9;
+            bgMusic.play().then(() => {
+                if (musicBtn) musicBtn.textContent = "🎵 MUSIC: ON";
+            }).catch(err => {
+                console.log("Autoplay restricted:", err);
+                if (musicBtn) musicBtn.textContent = "🎵 TAP TO PLAY";
             });
         }
+    }
+
+    enterBtn.addEventListener('click', () => {
+        attemptPlayMusic();
         navigateToPage('page-2');
     });
+
+    if (musicBtn) {
+        musicBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (bgMusic.paused) {
+                bgMusic.play().then(() => {
+                    musicBtn.textContent = "🎵 MUSIC: ON";
+                }).catch(err => console.log(err));
+            } else {
+                bgMusic.pause();
+                musicBtn.textContent = "🎵 MUSIC: OFF";
+            }
+        });
+    }
 
     nextBtns.forEach(btn => {
         btn.addEventListener('click', () => {
