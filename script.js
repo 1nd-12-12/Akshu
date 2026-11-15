@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterBtn = document.getElementById('enter-btn');
     const replayBtn = document.getElementById('replay-btn');
     const nextBtns = document.querySelectorAll('.next-page-btn');
+    const bgMusic = document.getElementById('bg-music');
 
     let currentPageId = 'page-1';
     let isFinaleMode = false;
@@ -44,14 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
             this.alpha = Math.random() * 0.75 + 0.15;
             this.pulseSpeed = Math.random() * 0.02 + 0.005;
             this.pulseAngle = Math.random() * Math.PI * 2;
-            // Rich gold palette
             const tones = ['#fff3b8', '#f3d06b', '#d4af37', '#c59b27'];
             this.color = tones[Math.floor(Math.random() * tones.length)];
         }
 
         update() {
             if (isFinaleMode) {
-                // Gather gracefully toward a royal halo around the center
                 const centerX = canvas.width / 2;
                 const centerY = canvas.height / 2;
                 const dx = centerX - this.x;
@@ -63,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.x += dx * 0.012;
                     this.y += dy * 0.012;
                 } else {
-                    // Orbit gently around the crown
                     const angle = Math.atan2(dy, dx) + 0.012;
                     this.x += Math.cos(angle) * 0.6;
                     this.y += Math.sin(angle) * 0.6;
@@ -137,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Toggle Finale particle gathering on Page 5
         isFinaleMode = (targetId === 'page-5');
 
         pages.forEach(page => {
@@ -232,6 +229,13 @@ document.addEventListener('DOMContentLoaded', () => {
        4. EVENT LISTENERS & INITIALIZATION
        ===================================================== */
     enterBtn.addEventListener('click', () => {
+        // Play background music (akshu.mp3) smoothly on click
+        if (bgMusic) {
+            bgMusic.volume = 0.8;
+            bgMusic.play().catch(err => {
+                console.log("Audio autoplay prevented by browser:", err);
+            });
+        }
         navigateToPage('page-2');
     });
 
